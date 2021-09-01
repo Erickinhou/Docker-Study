@@ -1,10 +1,9 @@
 FROM node:13-alpine
 
-ENV MONGO_DB_USERNAME=admin \
-    MONGO_DB_PWD=password
-
+# Create a folder on the container
 RUN mkdir -p /home/app
 
+#Copy folder app on host machine into home/app inside the component
 COPY ./app /home/app
 
 # set default dir so that next commands executes in /home/app dir

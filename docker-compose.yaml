@@ -12,6 +12,7 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
+      # path that generaly mongo store data
       - mongo-data:/data/db
   mongo-express:
     image: mongo-express
@@ -22,5 +23,6 @@ services:
       - ME_CONFIG_MONGODB_ADMINPASSWORD=password
       - ME_CONFIG_MONGODB_SERVER=mongodb
 volumes:
+  # list all volumes that you have
   mongo-data:
     driver: local
